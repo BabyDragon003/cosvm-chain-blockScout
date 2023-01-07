@@ -1,0 +1,12 @@
+https://docs.blockscout.com/for-developers/manual-deployment
+
+-- BlockScout
+1. git checkout and install
+2. set the configuration.
+2. ./docker-compose folder 
+	docker compose up
+   or in the ./docker folder
+	make start
+
+- command that remove the docker image
+docker system prune -a
