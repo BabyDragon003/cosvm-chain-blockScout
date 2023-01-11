@@ -3,6 +3,12 @@ version: '3.9'
 services:
   stats-db-init:
     image: postgres:14
+    volumes:
+      - ./stats-db-data:/var/lib/postgresql/data
+    entrypoint:
+      - sh
+      - -c
+      - |
         chown -R 2000:2000 /var/lib/postgresql/data
 
   stats-db:
