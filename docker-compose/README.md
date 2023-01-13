@@ -14,6 +14,22 @@ Runs Blockscout locally in Docker containers with [docker-compose](https://githu
 ## 	NEXT_PUBLIC_NETWORK_LOGO=http://15.235.196.1/network_logo.svg
 ## 	NEXT_PUBLIC_NETWORK_LOGO_DARK=http://15.235.196.1/network_logo.svg
 
+## add the apps(marketplace) to sidebar
+## 1. copy the marketplace_config.json to /usr/share/nginx/html
+## 2. add the follow env to common-frontend.env file.
+## 	NEXT_PUBLIC_MARKETPLACE_CONFIG_URL=http://15.235.196.1/marketplace_config.json
+## 	NEXT_PUBLIC_MARKETPLACE_SUBMIT_FORM=http://15.235.196.1
+## 	NEXT_PUBLIC_NETWORK_RPC_URL=http://51.79.231.20:8545/
+
+
+## Building Docker containers from source
+
+```bash
+cd ./docker-compose
+docker-compose up --build
+docker compose up -d
+```
+
 **Note**: if you don't need to make backend customizations, you can run `docker-compose up` in order to launch from pre-build backend Docker image. This will be much faster.
 
 This command uses `docker-compose.yml` by-default, which builds the backend of the explorer into the Docker image and runs 9 Docker containers:
