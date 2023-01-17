@@ -1,13 +1,8 @@
+# Docker-compose configuration
 
 Runs Blockscout locally in Docker containers with [docker-compose](https://github.com/docker/compose).
 
 ## Prerequisites
-
-- Docker v20.10+
-- Docker-compose 2.x.x+
-- Running Ethereum JSON RPC client
-
-## change the logo image of frontend
 ## 1. copy the logo.svg file to /usr/share/nginx/html
 ## 2. add the follow env to common-frontend.env file.
 ## 	NEXT_PUBLIC_NETWORK_LOGO=http://15.235.196.1/network_logo.svg
