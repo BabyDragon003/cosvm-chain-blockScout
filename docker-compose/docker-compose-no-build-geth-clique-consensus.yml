@@ -1,4 +1,3 @@
-version: '3.9'
 
 services:
   redis_db:
@@ -18,6 +17,27 @@ services:
 
   backend:
     depends_on:
+      - db
+      - redis_db
+    extends:
+      file: ./services/docker-compose-backend.yml
+      service: backend
+    links:
+      - db:database
+    environment:
+        ETHEREUM_JSONRPC_VARIANT: 'geth'
+        BLOCK_TRANSFORMER: 'clique'
+
+  visualizer:
+    extends:
+      file: ./services/docker-compose-visualizer.yml
+      service: visualizer
+
+  sig-provider:
+    extends:
+      file: ./services/docker-compose-sig-provider.yml
+      service: sig-provider
+
   frontend:
     depends_on:
       - backend
