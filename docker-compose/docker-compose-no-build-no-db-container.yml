@@ -8,17 +8,6 @@ services:
 
   backend:
     depends_on:
-      - redis_db
-    extends:
-      file: ./services/docker-compose-backend.yml
-      service: backend
-    environment:
-        ETHEREUM_JSONRPC_VARIANT: 'geth'
-
-  visualizer:
-    extends:
-      file: ./services/docker-compose-visualizer.yml
-      service: visualizer
 
   sig-provider:
     extends:
