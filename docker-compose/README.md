@@ -24,32 +24,6 @@ Runs Blockscout locally in Docker containers with [docker-compose](https://githu
 
 ## Building Docker containers from source
 
-```bash
-cd ./docker-compose
-docker-compose up --build
-docker compose up -d
-```
-
-**Note**: if you don't need to make backend customizations, you can run `docker-compose up` in order to launch from pre-build backend Docker image. This will be much faster.
-
-This command uses `docker-compose.yml` by-default, which builds the backend of the explorer into the Docker image and runs 9 Docker containers:
-
-- Postgres 14.x database, which will be available at port 7432 on the host machine.
-- Redis database of the latest version.
-- Blockscout backend with api at /api path.
-- Nginx proxy to bind backend, frontend and microservices.
-- Blockscout explorer at http://localhost.
-
-and 4 containers for microservices (written in Rust):
-
-- [Stats](https://github.com/blockscout/blockscout-rs/tree/main/stats) service with a separate Postgres 14 DB.
-- [Sol2UML visualizer](https://github.com/blockscout/blockscout-rs/tree/main/visualizer) service.
-- [Sig-provider](https://github.com/blockscout/blockscout-rs/tree/main/sig-provider) service.
-
-**Note for Linux users**: Linux users need to run the local node on http://0.0.0.0/ rather than http://127.0.0.1/
-
-## Configs for different Ethereum clients
-
 The repo contains built-in configs for different JSON RPC clients without need to build the image.
 
 - Erigon: `docker-compose -f docker-compose-no-build-erigon.yml up -d`
