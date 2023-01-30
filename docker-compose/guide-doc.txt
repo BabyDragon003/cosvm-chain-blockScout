@@ -1,4 +1,3 @@
-https://docs.blockscout.com/for-developers/manual-deployment
 
 -- BlockScout
 1. git checkout and install
