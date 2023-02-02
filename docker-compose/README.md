@@ -1,3 +1,4 @@
+# Docker-compose configuration
 
 Runs Blockscout locally in Docker containers with [docker-compose](https://github.com/docker/compose).
 
